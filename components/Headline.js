@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.css";
 
-
 export function Headline(props) {
   return (
     <div>
@@ -8,8 +7,8 @@ export function Headline(props) {
 
       <p className={styles.description}>
         Get started by editing{" "}
-        <code className={styles.code}>pages/{props.page}.js</code>
-      </p>
+        {props.children}      </p>
+        <button onClick={props.onClick}>ボタン</button>
     </div>
   );
 }
