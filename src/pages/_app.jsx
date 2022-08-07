@@ -1,15 +1,15 @@
-import '../styles/globals.css'
+import Head from "next/head";
+import "src/styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      // eslint-disable-next-line react/jsx-no-undef
-      {/* <Head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Head>
       <Component {...pageProps} />;
     </>
   );
 }
 
-export default MyApp
+export default MyApp;
