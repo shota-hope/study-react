@@ -3,10 +3,54 @@ import styles from "../styles/Home.module.css";
 import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
 import { Header } from "../components/Header";
+import { useCallback, useState } from "react";
+import { Links } from "src/components/Links";
+
+const ITEMS = [
+  {
+    id: 1,
+    href: "https://nextjs.org/docs",
+    title: "Documentation→",
+    description: "Find in-depth information about Next.js features and API.",
+  },
+  {
+    id: 2,
+    href: "hhttps://nextjs.org/learn",
+    title: "Learn→",
+    description: "Learn about Next.js in an interactive course with quizzes!",
+  },
+  {
+    id: 3,
+    href: "https://nextjs.org/docs",
+    title: "Documentation→",
+    description: "Find in-depth information about Next.js features and API.",
+  },
+  {
+    id: 4,
+    href: "https://nextjs.org/docs",
+    title: "Documentation→",
+    description: "Find in-depth information about Next.js features and API.",
+  },
+];
 
 export default function Home(props) {
-  const { count, isShow, handleClick, text, array, handleChange, handleAdd, handleDisplay } =
-    props;
+  const {
+    count,
+    isShow,
+    handleClick,
+    text,
+    array,
+    handleChange,
+    handleAdd,
+    handleDisplay,
+  } = props;
+
+    const [items, setItems] = useState([ITEMS]);
+    const handleReduce = useCallback(() => {
+      setItems((prevItems) => {
+        return prevItems.slice(0, prevItems.length - 1);
+      });
+    }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -27,6 +71,7 @@ export default function Home(props) {
         })}
       </ul>
       <Main page="index" />
+      <Links items={items} handleReduce={handleReduce} />
       <Footer />
     </div>
   );

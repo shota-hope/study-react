@@ -4,9 +4,16 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import styles from "../styles/Home.module.css";
 
-export default function About(props) {
-  const { count, isShow, handleClick, text, array, handleChange, handleAdd } =
-    props;
+export default function About({
+  count,
+  isShow,
+  handleClick,
+  text,
+  array,
+  handleChange,
+  handleAdd,
+  handleDisplay,
+}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +29,7 @@ export default function About(props) {
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
-        {array.map((item) => {
+        {array?.map((item) => {
           return <li key={item}>{item}</li>;
         })}
       </ul>
