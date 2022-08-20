@@ -3,15 +3,10 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import styles from "../styles/Home.module.css";
-import { useCounter } from "src/hooks/useCounter";
-import { useInputArray } from "src/hooks/useInputArray";
-import { useBgLiightBlue } from "src/hooks/useBgLiightBlue";
 
-export default function About() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLiightBlue();
-
+export default function About(props) {
+  const { count, isShow, handleClick, text, array, handleChange, handleAdd } =
+    props;
   return (
     <div className={styles.container}>
       <Head>
