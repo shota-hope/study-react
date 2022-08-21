@@ -4,7 +4,7 @@ import { useCounter } from "src/hooks/useCounter";
 import { useInputArray } from "src/hooks/useInputArray";
 import { useBgLiightBlue } from "src/hooks/useBgLiightBlue";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   const counter = useCounter();
   const inputArray = useInputArray();
   useBgLiightBlue();

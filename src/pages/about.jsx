@@ -4,7 +4,7 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import styles from "../styles/Home.module.css";
 
-export default function About({
+const About = ({
   count,
   isShow,
   handleClick,
@@ -13,7 +13,7 @@ export default function About({
   handleChange,
   handleAdd,
   handleDisplay,
-}) {
+}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -38,4 +38,5 @@ export default function About({
       <Footer />
     </div>
   );
-}
+};
+export default About;

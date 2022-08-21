@@ -33,7 +33,7 @@ const ITEMS = [
   },
 ];
 
-export default function Home(props) {
+const Home = (props) => {
   const {
     doubleCount,
     isShow,
@@ -45,12 +45,12 @@ export default function Home(props) {
     handleDisplay,
   } = props;
 
-    const [items, setItems] = useState([ITEMS]);
-    const handleReduce = useCallback(() => {
-      setItems((prevItems) => {
-        return prevItems.slice(0, prevItems.length - 1);
-      });
-    }, []);
+  const [items, setItems] = useState([ITEMS]);
+  const handleReduce = useCallback(() => {
+    setItems((prevItems) => {
+      return prevItems.slice(0, prevItems.length - 1);
+    });
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -75,4 +75,6 @@ export default function Home(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;
